@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Incomes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="title">Incomes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Account</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for income in incomes %}
+            <tr>
+                <td>{{ income.name }}</td>
+                <td>{{ income.amount }}</td>
+                <td>{{ income.category }}</td>
+                <td>{{ income.date }}</td>
+                <td>{{ income.account }}</td>
+                <td>
+                    <a href="{{ url_for('edit_income', id=income.id) }}">Edit</a>
+                    <a href="{{ url_for('delete_income', id=income.id) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="add-btn" href="{{ url_for('add_income') }}">Add Income</a>
+</div>
+{% endblock %}

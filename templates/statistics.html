@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Statistics{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="title">Statistics</h1>
+    <div class="statistics-container">
+        <div class="statistics-box">
+            <h2 class="statistics-title">Total Expenses</h2>
+            <p class="statistics-value">{{ total_expenses }}</p>
+        </div>
+        <div class="statistics-box">
+            <h2 class="statistics-title">Total Incomes</h2>
+            <p class="statistics-value">{{ total_incomes }}</p>
+        </div>
+        <div class="statistics-box">
+            <h2 class="statistics-title">Total Balance</h2>
+            <p class="statistics-value">{{ total_balance }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
